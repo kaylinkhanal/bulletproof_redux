@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const initialState = {
-  count: 0
+ const initialState = {
+  count: 0,
 };
 
 //What is createSlice in Redux Toolkit?
