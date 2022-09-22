@@ -19,6 +19,7 @@ const Counter = () => {
       <h2>Current Count: {count}</h2>
       <button onClick={onUpClick}>Up</button>
       <button onClick={onDownClick}>Down</button>
+      
     </div>
   );
 };
