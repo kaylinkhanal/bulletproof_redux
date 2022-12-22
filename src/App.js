@@ -2,12 +2,18 @@ import React from "react";
 import './App.css';
 import Counter from "./features/counter/counter";
 import Box from './features/box/box';
-function App() {
+import Home from './features/home/home';
+import Profile from './features/home/profile';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+const App = () => {
   return (
-    <div className="App">
-      <Counter/>
-      <Box/>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/home" element={<Home/>}/>
+      <Route path="/profile" element={<Profile/>}/>
+    </Routes>
+  </BrowserRouter>
   );
 }
 
