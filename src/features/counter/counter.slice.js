@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const initialState = {
-  count: 0
+  count: 0,
+  age:29
 };
 
 //What is createSlice in Redux Toolkit?
@@ -12,12 +13,12 @@ const countSlice = createSlice({
   name: "count",
   initialState,
   reducers: {
-    increment: (state) => {
+    increment: (state, actions) => {
       state.count = state.count + 1;
     },
     decrement: (state) => {
       state.count = state.count - 1;
-    }
+    },
   }
 });
 

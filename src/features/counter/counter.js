@@ -1,25 +1,33 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {decrement, increment} from "./counter.slice";
 import {useDispatch, useSelector} from "react-redux";
+import { useNavigate } from 'react-router-dom'
+//functional component: stateless
+
 
 const Counter = () => {
-  const dispatch = useDispatch();
-  const { count } = useSelector((state) => state.count);
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const {count,age} = useSelector(state=>state.count)
+  //if count is greater thann 10, navigate to /box
+  useEffect(()=>{
+    if(count >10){
+      navigate('/box')
+    }
+  },[count])
 
-  const onUpClick = () => {
-    dispatch(increment());
-  };
-  const onDownClick = () => {
-    dispatch(decrement());
-  };
+
+  
+
+
+
   return (
     <div>
+      {count}<br/>
+      {age}
+      <button onClick={()=>dispatch(increment())}>increment</button>
+      <button>decrement</button>
       <h1>Counter Component</h1>
-
-      <h2>Current Count: {count}</h2>
-      <button onClick={onUpClick}>Up</button>
-      <button onClick={onDownClick}>Down</button>
-      
     </div>
   );
 };

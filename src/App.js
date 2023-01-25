@@ -1,14 +1,20 @@
 import React from "react";
 import './App.css';
-import Counter from "./features/counter/counter";
+import Home from "./containers/home";
 import Box from './features/box/box';
+import { Route, Routes } from "react-router-dom"
 function App() {
   return (
     <div className="App">
-      <Counter/>
-      <Box/>
+      <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/box" element={<Box />} />
+    </Routes>
     </div>
   );
 }
 
 export default App;
+
+//1 install and setup routing using react-router-dom
+//2 /box
