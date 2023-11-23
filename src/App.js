@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 import Home from "./containers/home";
 import Box from './features/box/box';
-import Counter from './features/Counter/counter'
+import Counter from './features/counter/counter'
 import { Route, Routes } from "react-router-dom"
 function App() {
   return (
